@@ -1,0 +1,78 @@
+:root {
+  --bs-primary: #f2a71b;
+  --bs-primary-rgb: 242, 167, 27;
+  --bs-link-color: #f2a71b;
+  --bs-link-hover-color: #c9860f;
+}
+
+.btn-primary {
+  --bs-btn-color: #4a3728;
+  --bs-btn-bg: #f2a71b;
+  --bs-btn-border-color: #f2a71b;
+  --bs-btn-hover-color: #4a3728;
+  --bs-btn-hover-bg: #d9930f;
+  --bs-btn-hover-border-color: #d9930f;
+  --bs-btn-active-color: #4a3728;
+  --bs-btn-active-bg: #c9860f;
+  --bs-btn-active-border-color: #c9860f;
+}
+
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fdf1dc, #f2a71b);
+}
+
+/* ===== Layout con menú lateral ===== */
+#sidebar.sidebar {
+  --bs-offcanvas-width: 260px;
+  --bs-offcanvas-bg: #6f5847;
+  background-color: #6f5847 !important;
+  flex-shrink: 0;
+  color: #f5ebe0;
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 260px;
+    overflow-y: auto;
+  }
+}
+
+.sidebar .nav-link {
+  color: rgba(252, 252, 252, 0.9);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.9rem;
+}
+
+.sidebar .nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.sidebar .nav-link.active {
+  background: #f2a71b;
+  color: #4a3728;
+  font-weight: 600;
+}
+
+/* Titulos de las secciones*/
+.sidebar .nav-section {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(237, 227, 216, 0.45);
+  padding: 1rem 0.9rem 0.3rem;
+}
+
+.app-content {
+  min-width: 0;
+  background: #f5efe8;
+  min-height: 100vh;
+}
+
+body {
+  background-color: #f5efe8;
+}

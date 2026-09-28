@@ -5,149 +5,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Proveedores - Aroma Cacao</title>
 </head>
-<body>
-<div class="d-flex">
+<body class="bg-gradient-to-br from-background via-background to-secondary min-h-screen">
+<div class="flex w-full min-h-screen">
 
-  <!-- ===== MENÚ LATERAL ===== -->
-  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar">
-    <div class="offcanvas-header d-lg-none">
-      <span class="fw-semibold">Menú</span>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"></button>
-    </div>
-
-    <div class="offcanvas-body d-flex flex-column p-3">
-      <a href="dashboard.html" class="d-flex align-items-center gap-2 text-white text-decoration-none mb-3 px-2">
-        <i class="bi bi-box-seam fs-3"></i>
-        <div class="lh-1">
-          <div class="fw-semibold">Aroma Cacao</div>
-          <small class="opacity-75">Mantenimiento</small>
+  <aside class="hidden lg:flex flex-col w-64 shrink-0 border-r border-border bg-background/80 backdrop-blur-xl">
+    <div class="p-6 border-b border-border">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-primary to-chart-1 flex items-center justify-center">
+          <i class="bi bi-box-seam text-primary-foreground text-lg"></i>
         </div>
-      </a>
-
-      <nav class="nav flex-column">
-        <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
-
-        <div class="nav-section">Inventario</div>
-        <a class="nav-link" href="productos.html"><i class="bi bi-box me-2"></i>Productos</a>
-        <a class="nav-link" href="movimientos.html"><i class="bi bi-arrow-left-right me-2"></i>Movimientos</a>
-        <a class="nav-link" href="prestamos.html"><i class="bi bi-tools me-2"></i>Préstamos</a>
-
-        <div class="nav-section">Catálogos</div>
-        <a class="nav-link active" href="proveedores.html"><i class="bi bi-truck me-2"></i>Proveedores</a>
-        <a class="nav-link" href="maquinas.html"><i class="bi bi-gear-wide-connected me-2"></i>Máquinas</a>
-
-        <div class="nav-section">Administración</div>
-        <a class="nav-link" href="usuarios.html"><i class="bi bi-people me-2"></i>Usuarios</a>
-      </nav>
-
-      <a href="login.html" class="nav-link text-white-50 mt-auto"><i class="bi bi-box-arrow-left me-2"></i>Cerrar sesión</a>
+        <div>
+          <h2 class="font-medium leading-tight">Aroma Cacao</h2>
+          <p class="text-xs text-muted-foreground">Mantenimiento</p>
+        </div>
+      </div>
+    </div>
+    <nav class="p-4 space-y-1 flex-1">
+      <a href="dashboard.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-speedometer2 w-5 text-center"></i>Dashboard</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Inventario</p>
+      <a href="productos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-box w-5 text-center"></i>Productos</a>
+      <a href="movimientos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-arrow-left-right w-5 text-center"></i>Movimientos</a>
+      <a href="prestamos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-tools w-5 text-center"></i>Préstamos</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Catálogos</p>
+      <a href="proveedores.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm bg-primary/10 text-primary border-l-2 border-primary font-medium"><i class="bi bi-truck w-5 text-center"></i>Proveedores</a>
+      <a href="maquinas.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-gear-wide-connected w-5 text-center"></i>Máquinas</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Administración</p>
+      <a href="usuarios.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-people w-5 text-center"></i>Usuarios</a>
+    </nav>
+    <div class="p-4 border-t border-border">
+      <a href="login.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-box-arrow-left w-5 text-center"></i>Cerrar sesión</a>
     </div>
   </aside>
 
-  <!-- ===== CONTENIDO ===== -->
-  <div class="app-content flex-grow-1">
+  <div id="mobile-sidebar-overlay" class="hidden fixed inset-0 bg-black/40 z-40 lg:hidden"></div>
+  <aside id="mobile-sidebar" class="fixed inset-y-0 left-0 w-72 bg-background z-50 -translate-x-full transition-transform duration-200 lg:hidden flex flex-col">
+    <div class="p-6 border-b border-border flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-primary to-chart-1 flex items-center justify-center">
+          <i class="bi bi-box-seam text-primary-foreground text-lg"></i>
+        </div>
+        <div>
+          <h2 class="font-medium leading-tight">Aroma Cacao</h2>
+          <p class="text-xs text-muted-foreground">Mantenimiento</p>
+        </div>
+      </div>
+      <button id="mobile-sidebar-close" class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <nav class="p-4 space-y-1 flex-1 overflow-y-auto">
+      <a href="dashboard.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-speedometer2 w-5 text-center"></i>Dashboard</a>
+      <a href="productos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-box w-5 text-center"></i>Productos</a>
+      <a href="movimientos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-arrow-left-right w-5 text-center"></i>Movimientos</a>
+      <a href="prestamos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-tools w-5 text-center"></i>Préstamos</a>
+      <a href="proveedores.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm bg-primary/10 text-primary font-medium"><i class="bi bi-truck w-5 text-center"></i>Proveedores</a>
+      <a href="maquinas.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-gear-wide-connected w-5 text-center"></i>Máquinas</a>
+      <a href="usuarios.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-people w-5 text-center"></i>Usuarios</a>
+    </nav>
+  </aside>
 
-    <!-- Barra superior -->
-    <header class="navbar bg-white border-bottom px-3 px-lg-4 sticky-top">
-      <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-        <i class="bi bi-list"></i>
-      </button>
-
-      <div class="ms-auto d-flex align-items-center gap-3">
-        <a href="dashboard.html#alertas" class="position-relative text-body fs-5">
-          <i class="bi bi-bell"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">4</span>
-        </a>
-
-        <div class="dropdown">
-          <a class="d-flex align-items-center gap-2 text-decoration-none text-body dropdown-toggle" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-person-circle fs-4"></i>
-            <span class="d-none d-sm-inline">
-              Carlos Mena <span class="badge text-bg-primary ms-1">Coordinator</span>
-            </span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
-          </ul>
+  <div class="flex-1 flex flex-col min-w-0">
+    <header class="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur-xl p-4">
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <button id="mobile-menu-trigger" class="lg:hidden text-muted-foreground"><i class="bi bi-list text-xl"></i></button>
+          <h1 class="text-lg font-medium">Proveedores</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <button class="relative text-muted-foreground">
+            <i class="bi bi-bell text-lg"></i>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-destructive rounded-full"></span>
+          </button>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-primary/10 ring-2 ring-primary/20 flex items-center justify-center text-xs font-medium text-primary">CM</div>
+            <span class="hidden sm:inline text-sm">Carlos Mena</span>
+          </div>
         </div>
       </div>
     </header>
 
-    <main class="p-3 p-lg-4">
+    <main class="flex-1 p-4 lg:p-6">
 
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
-        <h1 class="h3 mb-0">Proveedores</h1>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProveedor">
-          <i class="bi bi-plus-lg me-1"></i>Nuevo proveedor
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <h2 class="text-xl font-medium">Proveedores</h2>
+        <button data-modal-target="modalProveedor" class="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground text-sm px-4 py-2 hover:opacity-90 transition">
+          <i class="bi bi-plus-lg"></i>Nuevo proveedor
         </button>
       </div>
 
-      <div class="row g-3">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
-        <!-- Tarjeta de proveedor 1 -->
-        <div class="col-12 col-md-6 col-xl-4">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body">
-              <div class="d-flex justify-content-between align-items-start">
-                <h5 class="card-title mb-1">Ferretería Industrial Andina</h5>
-                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalProveedor"><i class="bi bi-pencil"></i></button>
-              </div>
-              <p class="text-muted small mb-3">RUC 1790012345001</p>
-              <ul class="list-unstyled small mb-3">
-                <li class="mb-1"><i class="bi bi-person me-2 text-muted"></i>Jorge Ramírez</li>
-                <li class="mb-1"><i class="bi bi-telephone me-2 text-muted"></i>0987654321</li>
-                <li class="mb-1"><i class="bi bi-envelope me-2 text-muted"></i>ventas@ferreteriaandina.com</li>
-                <li><i class="bi bi-geo-alt me-2 text-muted"></i>Av. Amazonas y Naciones Unidas, Quito</li>
-              </ul>
-              <button class="btn btn-sm btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalProductosProveedor">
-                <i class="bi bi-box me-1"></i>Ver productos (6)
-              </button>
-            </div>
+        <div class="bg-card border border-border rounded-xl p-5">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-medium">Ferretería Industrial Andina</h3>
+            <button data-modal-target="modalProveedor" class="text-muted-foreground hover:text-foreground"><i class="bi bi-pencil"></i></button>
           </div>
+          <p class="text-xs text-muted-foreground mb-3">RUC 1790012345001</p>
+          <ul class="text-sm space-y-1.5 mb-4 text-muted-foreground">
+            <li class="flex items-center gap-2"><i class="bi bi-person"></i>Jorge Ramírez</li>
+            <li class="flex items-center gap-2"><i class="bi bi-telephone"></i>0987654321</li>
+            <li class="flex items-center gap-2"><i class="bi bi-envelope"></i>ventas@ferreteriaandina.com</li>
+            <li class="flex items-center gap-2"><i class="bi bi-geo-alt"></i>Av. Amazonas y Naciones Unidas, Quito</li>
+          </ul>
+          <button data-modal-target="modalProductosProveedor" class="w-full rounded-lg border border-border text-sm py-2 hover:bg-accent inline-flex items-center justify-center gap-2">
+            <i class="bi bi-box"></i>Ver productos (6)
+          </button>
         </div>
 
-        <!-- Tarjeta de proveedor 2 -->
-        <div class="col-12 col-md-6 col-xl-4">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body">
-              <div class="d-flex justify-content-between align-items-start">
-                <h5 class="card-title mb-1">Repuestos y Rodamientos EC</h5>
-                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalProveedor"><i class="bi bi-pencil"></i></button>
-              </div>
-              <p class="text-muted small mb-3">RUC 1790098765001</p>
-              <ul class="list-unstyled small mb-3">
-                <li class="mb-1"><i class="bi bi-person me-2 text-muted"></i>Sandra Molina</li>
-                <li class="mb-1"><i class="bi bi-telephone me-2 text-muted"></i>0991122334</li>
-                <li class="mb-1"><i class="bi bi-envelope me-2 text-muted"></i>contacto@rodamientosec.com</li>
-                <li><i class="bi bi-geo-alt me-2 text-muted"></i>Parque Industrial, Ibarra</li>
-              </ul>
-              <button class="btn btn-sm btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalProductosProveedor">
-                <i class="bi bi-box me-1"></i>Ver productos (3)
-              </button>
-            </div>
+        <div class="bg-card border border-border rounded-xl p-5">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-medium">Repuestos y Rodamientos EC</h3>
+            <button data-modal-target="modalProveedor" class="text-muted-foreground hover:text-foreground"><i class="bi bi-pencil"></i></button>
           </div>
+          <p class="text-xs text-muted-foreground mb-3">RUC 1790098765001</p>
+          <ul class="text-sm space-y-1.5 mb-4 text-muted-foreground">
+            <li class="flex items-center gap-2"><i class="bi bi-person"></i>Sandra Molina</li>
+            <li class="flex items-center gap-2"><i class="bi bi-telephone"></i>0991122334</li>
+            <li class="flex items-center gap-2"><i class="bi bi-envelope"></i>contacto@rodamientosec.com</li>
+            <li class="flex items-center gap-2"><i class="bi bi-geo-alt"></i>Parque Industrial, Ibarra</li>
+          </ul>
+          <button data-modal-target="modalProductosProveedor" class="w-full rounded-lg border border-border text-sm py-2 hover:bg-accent inline-flex items-center justify-center gap-2">
+            <i class="bi bi-box"></i>Ver productos (3)
+          </button>
         </div>
 
-        <!-- Tarjeta de proveedor 3 -->
-        <div class="col-12 col-md-6 col-xl-4">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body">
-              <div class="d-flex justify-content-between align-items-start">
-                <h5 class="card-title mb-1">Químicos y Lubricantes del Norte</h5>
-                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalProveedor"><i class="bi bi-pencil"></i></button>
-              </div>
-              <p class="text-muted small mb-3">RUC 1001234567001</p>
-              <ul class="list-unstyled small mb-3">
-                <li class="mb-1"><i class="bi bi-person me-2 text-muted"></i>Pedro Farinango</li>
-                <li class="mb-1"><i class="bi bi-telephone me-2 text-muted"></i>0965544332</li>
-                <li class="mb-1"><i class="bi bi-envelope me-2 text-muted"></i>pedidos@qlnorte.com</li>
-                <li><i class="bi bi-geo-alt me-2 text-muted"></i>Vía a Atuntaqui, Imbabura</li>
-              </ul>
-              <button class="btn btn-sm btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalProductosProveedor">
-                <i class="bi bi-box me-1"></i>Ver productos (2)
-              </button>
-            </div>
+        <div class="bg-card border border-border rounded-xl p-5">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-medium">Químicos y Lubricantes del Norte</h3>
+            <button data-modal-target="modalProveedor" class="text-muted-foreground hover:text-foreground"><i class="bi bi-pencil"></i></button>
           </div>
+          <p class="text-xs text-muted-foreground mb-3">RUC 1001234567001</p>
+          <ul class="text-sm space-y-1.5 mb-4 text-muted-foreground">
+            <li class="flex items-center gap-2"><i class="bi bi-person"></i>Pedro Farinango</li>
+            <li class="flex items-center gap-2"><i class="bi bi-telephone"></i>0965544332</li>
+            <li class="flex items-center gap-2"><i class="bi bi-envelope"></i>pedidos@qlnorte.com</li>
+            <li class="flex items-center gap-2"><i class="bi bi-geo-alt"></i>Vía a Atuntaqui, Imbabura</li>
+          </ul>
+          <button data-modal-target="modalProductosProveedor" class="w-full rounded-lg border border-border text-sm py-2 hover:bg-accent inline-flex items-center justify-center gap-2">
+            <i class="bi bi-box"></i>Ver productos (2)
+          </button>
         </div>
 
       </div>
@@ -156,92 +150,88 @@
   </div>
 </div>
 
-<!-- ===== MODAL: Registrar / editar proveedor (FR-08) ===== -->
-<div class="modal fade" id="modalProveedor" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i class="bi bi-truck me-2"></i>Nuevo proveedor</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<!-- Modal: registrar/editar proveedor -->
+<div id="modalProveedor" class="modal-backdrop hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
+  <div class="bg-card border border-border rounded-xl w-full max-w-md">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+      <h3 class="font-medium">Nuevo proveedor</h3>
+      <button data-modal-close class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="p-5 space-y-4">
+      <div>
+        <label class="text-sm font-medium block mb-1.5">Nombre / razón social</label>
+        <input type="text" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
       </div>
-      <div class="modal-body">
-        <form class="row g-3">
-          <div class="col-12">
-            <label class="form-label">Nombre / razón social</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">RUC</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Persona de contacto</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Teléfono</label>
-            <input type="tel" class="form-control">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control">
-          </div>
-          <div class="col-12">
-            <label class="form-label">Dirección</label>
-            <input type="text" class="form-control">
-          </div>
-        </form>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="text-sm font-medium block mb-1.5">RUC</label>
+          <input type="text" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Contacto</label>
+          <input type="text" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar proveedor</button>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Teléfono</label>
+          <input type="tel" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Correo</label>
+          <input type="email" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
       </div>
+      <div>
+        <label class="text-sm font-medium block mb-1.5">Dirección</label>
+        <input type="text" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+      </div>
+    </div>
+    <div class="flex justify-end gap-2 px-5 py-4 border-t border-border">
+      <button data-modal-close class="rounded-lg border border-border px-4 py-2 text-sm">Cancelar</button>
+      <button class="rounded-lg bg-primary text-primary-foreground px-4 py-2 text-sm hover:opacity-90">Guardar proveedor</button>
     </div>
   </div>
 </div>
 
-<!-- ===== MODAL: Productos del proveedor (FR-09) ===== -->
-<div class="modal fade" id="modalProductosProveedor" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i class="bi bi-box me-2"></i>Productos de Ferretería Industrial Andina</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<!-- Modal: productos del proveedor -->
+<div id="modalProductosProveedor" class="modal-backdrop hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
+  <div class="bg-card border border-border rounded-xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+      <h3 class="font-medium">Productos de Ferretería Industrial Andina</h3>
+      <button data-modal-close class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="p-5">
+      <div class="overflow-x-auto mb-4">
+        <table class="w-full text-sm">
+          <thead class="text-muted-foreground">
+            <tr>
+              <th class="text-left font-medium py-2">Código</th>
+              <th class="text-left font-medium py-2">Producto</th>
+              <th class="text-right font-medium py-2">Precio ref.</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr><td class="py-2">HER-002</td><td class="py-2">Juego de llaves allen</td><td class="py-2 text-right">$14.50</td><td class="text-right"><button class="text-muted-foreground hover:text-destructive"><i class="bi bi-trash"></i></button></td></tr>
+            <tr><td class="py-2">HER-005</td><td class="py-2">Taladro percutor</td><td class="py-2 text-right">$89.00</td><td class="text-right"><button class="text-muted-foreground hover:text-destructive"><i class="bi bi-trash"></i></button></td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="modal-body">
-        <div class="table-responsive">
-          <table class="table align-middle">
-            <thead class="table-light">
-              <tr><th>Código</th><th>Producto</th><th class="text-end">Precio referencial</th><th></th></tr>
-            </thead>
-            <tbody>
-              <tr><td>HER-002</td><td>Juego de llaves allen</td><td class="text-end">$14.50</td><td class="text-end"><button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></td></tr>
-              <tr><td>HER-005</td><td>Taladro percutor</td><td class="text-end">$89.00</td><td class="text-end"><button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></td></tr>
-              <tr><td>MAT-021</td><td>Cable eléctrico #12</td><td class="text-end">$0.85</td><td class="text-end"><button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <hr>
-
-        <label class="form-label">Asociar nuevo producto</label>
-        <div class="row g-2">
-          <div class="col-8">
-            <select class="form-select">
-              <option>REP-014 · Rodamiento 6205</option>
-              <option>REP-032 · Banda transportadora B-48</option>
-              <option>INS-007 · Grasa multipropósito</option>
-            </select>
-          </div>
-          <div class="col-4">
-            <input type="number" class="form-control" placeholder="Precio $">
-          </div>
+      <div class="border-t border-border pt-4">
+        <label class="text-sm font-medium block mb-1.5">Asociar nuevo producto</label>
+        <div class="flex gap-2">
+          <select class="flex-1 rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+            <option>REP-014 · Rodamiento 6205</option>
+            <option>INS-007 · Grasa multipropósito</option>
+          </select>
+          <input type="number" placeholder="Precio $" class="w-28 rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Asociar producto</button>
-      </div>
+    </div>
+    <div class="flex justify-end gap-2 px-5 py-4 border-t border-border">
+      <button data-modal-close class="rounded-lg border border-border px-4 py-2 text-sm">Cerrar</button>
+      <button class="rounded-lg bg-primary text-primary-foreground px-4 py-2 text-sm hover:opacity-90">Asociar producto</button>
     </div>
   </div>
 </div>

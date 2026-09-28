@@ -5,140 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Máquinas - Aroma Cacao</title>
 </head>
-<body>
-<div class="d-flex">
+<body class="bg-gradient-to-br from-background via-background to-secondary min-h-screen">
+<div class="flex w-full min-h-screen">
 
-  <!-- ===== MENÚ LATERAL ===== -->
-  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar">
-    <div class="offcanvas-header d-lg-none">
-      <span class="fw-semibold">Menú</span>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"></button>
-    </div>
-
-    <div class="offcanvas-body d-flex flex-column p-3">
-      <a href="dashboard.html" class="d-flex align-items-center gap-2 text-white text-decoration-none mb-3 px-2">
-        <i class="bi bi-box-seam fs-3"></i>
-        <div class="lh-1">
-          <div class="fw-semibold">Aroma Cacao</div>
-          <small class="opacity-75">Mantenimiento</small>
+  <aside class="hidden lg:flex flex-col w-64 shrink-0 border-r border-border bg-background/80 backdrop-blur-xl">
+    <div class="p-6 border-b border-border">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-primary to-chart-1 flex items-center justify-center">
+          <i class="bi bi-box-seam text-primary-foreground text-lg"></i>
         </div>
-      </a>
-
-      <nav class="nav flex-column">
-        <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
-
-        <div class="nav-section">Inventario</div>
-        <a class="nav-link" href="productos.html"><i class="bi bi-box me-2"></i>Productos</a>
-        <a class="nav-link" href="movimientos.html"><i class="bi bi-arrow-left-right me-2"></i>Movimientos</a>
-        <a class="nav-link" href="prestamos.html"><i class="bi bi-tools me-2"></i>Préstamos</a>
-
-        <div class="nav-section">Catálogos</div>
-        <a class="nav-link" href="proveedores.html"><i class="bi bi-truck me-2"></i>Proveedores</a>
-        <a class="nav-link active" href="maquinas.html"><i class="bi bi-gear-wide-connected me-2"></i>Máquinas</a>
-
-        <div class="nav-section">Administración</div>
-        <a class="nav-link" href="usuarios.html"><i class="bi bi-people me-2"></i>Usuarios</a>
-      </nav>
-
-      <a href="login.html" class="nav-link text-white-50 mt-auto"><i class="bi bi-box-arrow-left me-2"></i>Cerrar sesión</a>
+        <div>
+          <h2 class="font-medium leading-tight">Aroma Cacao</h2>
+          <p class="text-xs text-muted-foreground">Mantenimiento</p>
+        </div>
+      </div>
+    </div>
+    <nav class="p-4 space-y-1 flex-1">
+      <a href="dashboard.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-speedometer2 w-5 text-center"></i>Dashboard</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Inventario</p>
+      <a href="productos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-box w-5 text-center"></i>Productos</a>
+      <a href="movimientos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-arrow-left-right w-5 text-center"></i>Movimientos</a>
+      <a href="prestamos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-tools w-5 text-center"></i>Préstamos</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pb-1">Catálogos</p>
+      <a href="proveedores.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-truck w-5 text-center"></i>Proveedores</a>
+      <a href="maquinas.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm bg-primary/10 text-primary border-l-2 border-primary font-medium"><i class="bi bi-gear-wide-connected w-5 text-center"></i>Máquinas</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Administración</p>
+      <a href="usuarios.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-people w-5 text-center"></i>Usuarios</a>
+    </nav>
+    <div class="p-4 border-t border-border">
+      <a href="login.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-box-arrow-left w-5 text-center"></i>Cerrar sesión</a>
     </div>
   </aside>
 
-  <!-- ===== CONTENIDO ===== -->
-  <div class="app-content flex-grow-1">
+  <div id="mobile-sidebar-overlay" class="hidden fixed inset-0 bg-black/40 z-40 lg:hidden"></div>
+  <aside id="mobile-sidebar" class="fixed inset-y-0 left-0 w-72 bg-background z-50 -translate-x-full transition-transform duration-200 lg:hidden flex flex-col">
+    <div class="p-6 border-b border-border flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-primary to-chart-1 flex items-center justify-center">
+          <i class="bi bi-box-seam text-primary-foreground text-lg"></i>
+        </div>
+        <div>
+          <h2 class="font-medium leading-tight">Aroma Cacao</h2>
+          <p class="text-xs text-muted-foreground">Mantenimiento</p>
+        </div>
+      </div>
+      <button id="mobile-sidebar-close" class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <nav class="p-4 space-y-1 flex-1 overflow-y-auto">
+      <a href="dashboard.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-speedometer2 w-5 text-center"></i>Dashboard</a>
+      <a href="productos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-box w-5 text-center"></i>Productos</a>
+      <a href="movimientos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-arrow-left-right w-5 text-center"></i>Movimientos</a>
+      <a href="prestamos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-tools w-5 text-center"></i>Préstamos</a>
+      <a href="proveedores.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-truck w-5 text-center"></i>Proveedores</a>
+      <a href="maquinas.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm bg-primary/10 text-primary font-medium"><i class="bi bi-gear-wide-connected w-5 text-center"></i>Máquinas</a>
+      <a href="usuarios.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-people w-5 text-center"></i>Usuarios</a>
+    </nav>
+  </aside>
 
-    <!-- Barra superior -->
-    <header class="navbar bg-white border-bottom px-3 px-lg-4 sticky-top">
-      <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-        <i class="bi bi-list"></i>
-      </button>
-
-      <div class="ms-auto d-flex align-items-center gap-3">
-        <a href="dashboard.html#alertas" class="position-relative text-body fs-5">
-          <i class="bi bi-bell"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">4</span>
-        </a>
-
-        <div class="dropdown">
-          <a class="d-flex align-items-center gap-2 text-decoration-none text-body dropdown-toggle" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-person-circle fs-4"></i>
-            <span class="d-none d-sm-inline">
-              Carlos Mena <span class="badge text-bg-primary ms-1">Coordinator</span>
-            </span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
-          </ul>
+  <div class="flex-1 flex flex-col min-w-0">
+    <header class="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur-xl p-4">
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <button id="mobile-menu-trigger" class="lg:hidden text-muted-foreground"><i class="bi bi-list text-xl"></i></button>
+          <h1 class="text-lg font-medium">Máquinas</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <button class="relative text-muted-foreground">
+            <i class="bi bi-bell text-lg"></i>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-destructive rounded-full"></span>
+          </button>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-primary/10 ring-2 ring-primary/20 flex items-center justify-center text-xs font-medium text-primary">CM</div>
+            <span class="hidden sm:inline text-sm">Carlos Mena</span>
+          </div>
         </div>
       </div>
     </header>
 
-    <main class="p-3 p-lg-4">
+    <main class="flex-1 p-4 lg:p-6">
 
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
-        <h1 class="h3 mb-0">Máquinas</h1>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMaquina">
-          <i class="bi bi-plus-lg me-1"></i>Nueva máquina
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <h2 class="text-xl font-medium">Máquinas de planta</h2>
+        <button data-modal-target="modalMaquina" class="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground text-sm px-4 py-2 hover:opacity-90 transition">
+          <i class="bi bi-plus-lg"></i>Nueva máquina
         </button>
       </div>
 
-      <div class="row g-3">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
-        <!-- Tarjeta de máquina 1 -->
-        <div class="col-12 col-md-6 col-xl-4">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body">
-              <div class="d-flex justify-content-between align-items-start">
-                <div>
-                  <h5 class="card-title mb-1">Molino M-1</h5>
-                  <p class="text-muted small mb-2">Código: MAQ-001</p>
-                </div>
-                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalMaquina"><i class="bi bi-pencil"></i></button>
-              </div>
-              <p class="small mb-3"><i class="bi bi-geo-alt me-2 text-muted"></i>Planta de procesamiento, nivel 1</p>
-              <button class="btn btn-sm btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRepuestosMaquina">
-                <i class="bi bi-gear me-1"></i>Repuestos compatibles (4)
-              </button>
-            </div>
+        <div class="bg-card border border-border rounded-xl p-5">
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="font-medium">Molino M-1</h3>
+            <button data-modal-target="modalMaquina" class="text-muted-foreground hover:text-foreground"><i class="bi bi-pencil"></i></button>
           </div>
+          <p class="text-xs text-muted-foreground mb-3">Código: MAQ-001</p>
+          <p class="text-sm text-muted-foreground flex items-center gap-2 mb-4"><i class="bi bi-geo-alt"></i>Planta de procesamiento, nivel 1</p>
+          <button data-modal-target="modalRepuestosMaquina" class="w-full rounded-lg border border-border text-sm py-2 hover:bg-accent inline-flex items-center justify-center gap-2">
+            <i class="bi bi-gear"></i>Repuestos compatibles (4)
+          </button>
         </div>
 
-        <!-- Tarjeta de máquina 2 -->
-        <div class="col-12 col-md-6 col-xl-4">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body">
-              <div class="d-flex justify-content-between align-items-start">
-                <div>
-                  <h5 class="card-title mb-1">Tostadora T-2</h5>
-                  <p class="text-muted small mb-2">Código: MAQ-002</p>
-                </div>
-                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalMaquina"><i class="bi bi-pencil"></i></button>
-              </div>
-              <p class="small mb-3"><i class="bi bi-geo-alt me-2 text-muted"></i>Planta de procesamiento, nivel 1</p>
-              <button class="btn btn-sm btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRepuestosMaquina">
-                <i class="bi bi-gear me-1"></i>Repuestos compatibles (2)
-              </button>
-            </div>
+        <div class="bg-card border border-border rounded-xl p-5">
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="font-medium">Tostadora T-2</h3>
+            <button data-modal-target="modalMaquina" class="text-muted-foreground hover:text-foreground"><i class="bi bi-pencil"></i></button>
           </div>
+          <p class="text-xs text-muted-foreground mb-3">Código: MAQ-002</p>
+          <p class="text-sm text-muted-foreground flex items-center gap-2 mb-4"><i class="bi bi-geo-alt"></i>Planta de procesamiento, nivel 1</p>
+          <button data-modal-target="modalRepuestosMaquina" class="w-full rounded-lg border border-border text-sm py-2 hover:bg-accent inline-flex items-center justify-center gap-2">
+            <i class="bi bi-gear"></i>Repuestos compatibles (2)
+          </button>
         </div>
 
-        <!-- Tarjeta de máquina 3 -->
-        <div class="col-12 col-md-6 col-xl-4">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body">
-              <div class="d-flex justify-content-between align-items-start">
-                <div>
-                  <h5 class="card-title mb-1">Envasadora E-3</h5>
-                  <p class="text-muted small mb-2">Código: MAQ-003</p>
-                </div>
-                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalMaquina"><i class="bi bi-pencil"></i></button>
-              </div>
-              <p class="small mb-3"><i class="bi bi-geo-alt me-2 text-muted"></i>Planta de empaque, nivel 2</p>
-              <button class="btn btn-sm btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRepuestosMaquina">
-                <i class="bi bi-gear me-1"></i>Repuestos compatibles (3)
-              </button>
-            </div>
+        <div class="bg-card border border-border rounded-xl p-5">
+          <div class="flex justify-between items-start mb-1">
+            <h3 class="font-medium">Envasadora E-3</h3>
+            <button data-modal-target="modalMaquina" class="text-muted-foreground hover:text-foreground"><i class="bi bi-pencil"></i></button>
           </div>
+          <p class="text-xs text-muted-foreground mb-3">Código: MAQ-003</p>
+          <p class="text-sm text-muted-foreground flex items-center gap-2 mb-4"><i class="bi bi-geo-alt"></i>Planta de empaque, nivel 2</p>
+          <button data-modal-target="modalRepuestosMaquina" class="w-full rounded-lg border border-border text-sm py-2 hover:bg-accent inline-flex items-center justify-center gap-2">
+            <i class="bi bi-gear"></i>Repuestos compatibles (3)
+          </button>
         </div>
 
       </div>
@@ -147,80 +135,73 @@
   </div>
 </div>
 
-<!-- ===== MODAL: Registrar / editar máquina (FR-11) ===== -->
-<div class="modal fade" id="modalMaquina" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i class="bi bi-gear-wide-connected me-2"></i>Nueva máquina</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<!-- Modal: registrar/editar máquina -->
+<div id="modalMaquina" class="modal-backdrop hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
+  <div class="bg-card border border-border rounded-xl w-full max-w-md">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+      <h3 class="font-medium">Nueva máquina</h3>
+      <button data-modal-close class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="p-5 space-y-4">
+      <div>
+        <label class="text-sm font-medium block mb-1.5">Nombre</label>
+        <input type="text" placeholder="Ej. Molino M-1" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
       </div>
-      <div class="modal-body">
-        <form class="row g-3">
-          <div class="col-12">
-            <label class="form-label">Nombre</label>
-            <input type="text" class="form-control" placeholder="Ej. Molino M-1">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Código de identificación</label>
-            <input type="text" class="form-control" placeholder="Ej. MAQ-004">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Ubicación en planta</label>
-            <input type="text" class="form-control" placeholder="Ej. Planta de empaque, nivel 2">
-          </div>
-        </form>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Código</label>
+          <input type="text" placeholder="MAQ-004" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Ubicación</label>
+          <input type="text" placeholder="Nivel 2" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar máquina</button>
-      </div>
+    </div>
+    <div class="flex justify-end gap-2 px-5 py-4 border-t border-border">
+      <button data-modal-close class="rounded-lg border border-border px-4 py-2 text-sm">Cancelar</button>
+      <button class="rounded-lg bg-primary text-primary-foreground px-4 py-2 text-sm hover:opacity-90">Guardar máquina</button>
     </div>
   </div>
 </div>
 
-<!-- ===== MODAL: Repuestos compatibles con la máquina (FR-12) ===== -->
-<div class="modal fade" id="modalRepuestosMaquina" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i class="bi bi-gear me-2"></i>Repuestos compatibles con Molino M-1</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<!-- Modal: repuestos compatibles -->
+<div id="modalRepuestosMaquina" class="modal-backdrop hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
+  <div class="bg-card border border-border rounded-xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+      <h3 class="font-medium">Repuestos compatibles con Molino M-1</h3>
+      <button data-modal-close class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="p-5">
+      <div class="overflow-x-auto mb-4">
+        <table class="w-full text-sm">
+          <thead class="text-muted-foreground">
+            <tr>
+              <th class="text-left font-medium py-2">Código</th>
+              <th class="text-left font-medium py-2">Repuesto</th>
+              <th class="text-right font-medium py-2">Stock</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr><td class="py-2">REP-014</td><td class="py-2">Rodamiento 6205</td><td class="py-2 text-right">0</td><td class="text-right"><button class="text-muted-foreground hover:text-destructive"><i class="bi bi-trash"></i></button></td></tr>
+            <tr><td class="py-2">REP-032</td><td class="py-2">Banda transportadora B-48</td><td class="py-2 text-right">1</td><td class="text-right"><button class="text-muted-foreground hover:text-destructive"><i class="bi bi-trash"></i></button></td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="modal-body">
-        <div class="table-responsive">
-          <table class="table align-middle">
-            <thead class="table-light">
-              <tr><th>Código</th><th>Repuesto</th><th class="text-end">Stock</th><th></th></tr>
-            </thead>
-            <tbody>
-              <tr><td>REP-014</td><td>Rodamiento 6205</td><td class="text-end">0</td><td class="text-end"><button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></td></tr>
-              <tr><td>REP-032</td><td>Banda transportadora B-48</td><td class="text-end">1</td><td class="text-end"><button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></td></tr>
-              <tr><td>REP-018</td><td>Chumacera de piso 1"</td><td class="text-end">5</td><td class="text-end"><button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></td></tr>
-              <tr><td>REP-025</td><td>Motor eléctrico 2 HP</td><td class="text-end">2</td><td class="text-end"><button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <hr>
-
-        <label class="form-label">Asociar repuesto compatible</label>
-        <div class="row g-2">
-          <div class="col-9">
-            <select class="form-select">
-              <option>HER-002 · Juego de llaves allen</option>
-              <option>INS-007 · Grasa multipropósito</option>
-              <option>REP-040 · Sello mecánico</option>
-            </select>
-          </div>
-          <div class="col-3 d-grid">
-            <button type="button" class="btn btn-primary">Asociar</button>
-          </div>
+      <div class="border-t border-border pt-4">
+        <label class="text-sm font-medium block mb-1.5">Asociar repuesto compatible</label>
+        <div class="flex gap-2">
+          <select class="flex-1 rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+            <option>HER-002 · Juego de llaves allen</option>
+            <option>REP-040 · Sello mecánico</option>
+          </select>
+          <button class="rounded-lg bg-primary text-primary-foreground text-sm px-4 hover:opacity-90">Asociar</button>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
+    </div>
+    <div class="flex justify-end gap-2 px-5 py-4 border-t border-border">
+      <button data-modal-close class="rounded-lg border border-border px-4 py-2 text-sm">Cerrar</button>
     </div>
   </div>
 </div>

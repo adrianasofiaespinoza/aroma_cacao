@@ -5,305 +5,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Productos - Aroma Cacao</title>
 </head>
-<body>
-<div class="d-flex">
+<body class="bg-gradient-to-br from-background via-background to-secondary min-h-screen">
+<div class="flex w-full min-h-screen">
 
-  <!-- ===== MENÚ LATERAL ===== -->
-  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar">
-    <div class="offcanvas-header d-lg-none">
-      <span class="fw-semibold">Menú</span>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"></button>
-    </div>
-
-    <div class="offcanvas-body d-flex flex-column p-3">
-      <a href="dashboard.html" class="d-flex align-items-center gap-2 text-white text-decoration-none mb-3 px-2">
-        <i class="bi bi-box-seam fs-3"></i>
-        <div class="lh-1">
-          <div class="fw-semibold">Aroma Cacao</div>
-          <small class="opacity-75">Mantenimiento</small>
+  <aside class="hidden lg:flex flex-col w-64 shrink-0 border-r border-border bg-background/80 backdrop-blur-xl">
+    <div class="p-6 border-b border-border">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-primary to-chart-1 flex items-center justify-center">
+          <i class="bi bi-box-seam text-primary-foreground text-lg"></i>
         </div>
-      </a>
-
-      <nav class="nav flex-column">
-        <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
-
-        <div class="nav-section">Inventario</div>
-        <a class="nav-link active" href="productos.html"><i class="bi bi-box me-2"></i>Productos</a>
-        <a class="nav-link" href="movimientos.html"><i class="bi bi-arrow-left-right me-2"></i>Movimientos</a>
-        <a class="nav-link" href="prestamos.html"><i class="bi bi-tools me-2"></i>Préstamos</a>
-
-        <div class="nav-section">Catálogos</div>
-        <a class="nav-link" href="proveedores.html"><i class="bi bi-truck me-2"></i>Proveedores</a>
-        <a class="nav-link" href="maquinas.html"><i class="bi bi-gear-wide-connected me-2"></i>Máquinas</a>
-
-        <div class="nav-section">Administración</div>
-        <a class="nav-link" href="usuarios.html"><i class="bi bi-people me-2"></i>Usuarios</a>
-      </nav>
-
-      <a href="login.html" class="nav-link text-white-50 mt-auto"><i class="bi bi-box-arrow-left me-2"></i>Cerrar sesión</a>
+        <div>
+          <h2 class="font-medium leading-tight">Aroma Cacao</h2>
+          <p class="text-xs text-muted-foreground">Mantenimiento</p>
+        </div>
+      </div>
+    </div>
+    <nav class="p-4 space-y-1 flex-1">
+      <a href="dashboard.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-speedometer2 w-5 text-center"></i>Dashboard</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Inventario</p>
+      <a href="productos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm bg-primary/10 text-primary border-l-2 border-primary font-medium"><i class="bi bi-box w-5 text-center"></i>Productos</a>
+      <a href="movimientos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-arrow-left-right w-5 text-center"></i>Movimientos</a>
+      <a href="prestamos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-tools w-5 text-center"></i>Préstamos</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Catálogos</p>
+      <a href="proveedores.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-truck w-5 text-center"></i>Proveedores</a>
+      <a href="maquinas.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-gear-wide-connected w-5 text-center"></i>Máquinas</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Administración</p>
+      <a href="usuarios.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-people w-5 text-center"></i>Usuarios</a>
+    </nav>
+    <div class="p-4 border-t border-border">
+      <a href="login.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-box-arrow-left w-5 text-center"></i>Cerrar sesión</a>
     </div>
   </aside>
 
-  <!-- ===== CONTENIDO ===== -->
-  <div class="app-content flex-grow-1">
+  <div id="mobile-sidebar-overlay" class="hidden fixed inset-0 bg-black/40 z-40 lg:hidden"></div>
+  <aside id="mobile-sidebar" class="fixed inset-y-0 left-0 w-72 bg-background z-50 -translate-x-full transition-transform duration-200 lg:hidden flex flex-col">
+    <div class="p-6 border-b border-border flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-primary to-chart-1 flex items-center justify-center">
+          <i class="bi bi-box-seam text-primary-foreground text-lg"></i>
+        </div>
+        <div>
+          <h2 class="font-medium leading-tight">Aroma Cacao</h2>
+          <p class="text-xs text-muted-foreground">Mantenimiento</p>
+        </div>
+      </div>
+      <button id="mobile-sidebar-close" class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <nav class="p-4 space-y-1 flex-1 overflow-y-auto">
+      <a href="dashboard.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-speedometer2 w-5 text-center"></i>Dashboard</a>
+      <a href="productos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm bg-primary/10 text-primary font-medium"><i class="bi bi-box w-5 text-center"></i>Productos</a>
+      <a href="movimientos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-arrow-left-right w-5 text-center"></i>Movimientos</a>
+      <a href="prestamos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-tools w-5 text-center"></i>Préstamos</a>
+      <a href="proveedores.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-truck w-5 text-center"></i>Proveedores</a>
+      <a href="maquinas.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-gear-wide-connected w-5 text-center"></i>Máquinas</a>
+      <a href="usuarios.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-people w-5 text-center"></i>Usuarios</a>
+    </nav>
+  </aside>
 
-    <!-- Barra superior -->
-    <header class="navbar bg-white border-bottom px-3 px-lg-4 sticky-top">
-      <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-        <i class="bi bi-list"></i>
-      </button>
-
-      <div class="ms-auto d-flex align-items-center gap-3">
-        <a href="dashboard.html#alertas" class="position-relative text-body fs-5">
-          <i class="bi bi-bell"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">4</span>
-        </a>
-
-        <div class="dropdown">
-          <a class="d-flex align-items-center gap-2 text-decoration-none text-body dropdown-toggle" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-person-circle fs-4"></i>
-            <span class="d-none d-sm-inline">
-              Carlos Mena <span class="badge text-bg-primary ms-1">Coordinator</span>
-            </span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
-          </ul>
+  <div class="flex-1 flex flex-col min-w-0">
+    <header class="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur-xl p-4">
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <button id="mobile-menu-trigger" class="lg:hidden text-muted-foreground"><i class="bi bi-list text-xl"></i></button>
+          <h1 class="text-lg font-medium">Productos</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <button class="relative text-muted-foreground">
+            <i class="bi bi-bell text-lg"></i>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-destructive rounded-full"></span>
+          </button>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-primary/10 ring-2 ring-primary/20 flex items-center justify-center text-xs font-medium text-primary">CM</div>
+            <span class="hidden sm:inline text-sm">Carlos Mena</span>
+          </div>
         </div>
       </div>
     </header>
 
-    <main class="p-3 p-lg-4">
+    <main class="flex-1 p-4 lg:p-6">
 
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
-        <h1 class="h3 mb-0">Productos</h1>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto">
-          <i class="bi bi-plus-lg me-1"></i>Nuevo producto
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <h2 class="text-xl font-medium">Catálogo de productos</h2>
+        <button data-modal-target="modalProducto" class="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground text-sm px-4 py-2 hover:opacity-90 transition">
+          <i class="bi bi-plus-lg"></i>Nuevo producto
         </button>
       </div>
 
-      <!-- Filtros / búsqueda (FR-06) -->
-      <div class="card border-0 shadow-sm mb-3">
-        <div class="card-body">
-          <form class="row g-2 align-items-end">
-            <div class="col-12 col-md-4">
-              <label class="form-label small text-muted mb-1">Buscar por código o nombre</label>
-              <input type="text" class="form-control" placeholder="Ej. REP-014 o rodamiento">
-            </div>
-            <div class="col-6 col-md-3">
-              <label class="form-label small text-muted mb-1">Categoría</label>
-              <select class="form-select">
-                <option selected>Todas</option>
-                <option>Herramientas</option>
-                <option>Repuestos</option>
-                <option>Insumos</option>
-                <option>Equipos</option>
-                <option>Materiales</option>
-              </select>
-            </div>
-            <div class="col-6 col-md-3">
-              <label class="form-label small text-muted mb-1">Estado</label>
-              <select class="form-select">
-                <option selected>Todos</option>
-                <option>Activo</option>
-                <option>Inactivo</option>
-              </select>
-            </div>
-            <div class="col-12 col-md-2 d-grid">
-              <button type="submit" class="btn btn-outline-primary"><i class="bi bi-search me-1"></i>Buscar</button>
-            </div>
-          </form>
+      <div class="bg-card border border-border rounded-xl p-4 mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+          <input type="text" placeholder="Buscar por código o nombre" class="rounded-lg bg-input-background border border-border px-3 py-2 text-sm md:col-span-2">
+          <select class="rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+            <option>Todas las categorías</option>
+            <option>Herramientas</option>
+            <option>Repuestos</option>
+            <option>Insumos</option>
+          </select>
+          <select class="rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+            <option>Todos los estados</option>
+            <option>Activo</option>
+            <option>Inactivo</option>
+          </select>
         </div>
       </div>
 
-      <!-- Tabla de productos -->
-      <div class="card border-0 shadow-sm">
-        <div class="table-responsive">
-          <table class="table table-hover align-middle mb-0">
-            <thead class="table-light">
+      <div class="bg-card border border-border rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-accent/40 text-muted-foreground">
               <tr>
-                <th>Código</th>
-                <th>Nombre</th>
-                <th>Categoría</th>
-                <th>Unidad</th>
-                <th class="text-end">Stock</th>
-                <th class="text-end">Mínimo</th>
-                <th>Ubicación</th>
-                <th>Estado</th>
-                <th class="text-end">Acciones</th>
+                <th class="text-left font-medium px-4 py-2">Código</th>
+                <th class="text-left font-medium px-4 py-2">Nombre</th>
+                <th class="text-left font-medium px-4 py-2">Categoría</th>
+                <th class="text-right font-medium px-4 py-2">Stock</th>
+                <th class="text-right font-medium px-4 py-2">Mínimo</th>
+                <th class="text-left font-medium px-4 py-2">Estado</th>
+                <th class="text-right font-medium px-4 py-2">Acciones</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>REP-014</td>
-                <td>Rodamiento 6205</td>
-                <td>Repuestos</td>
-                <td>unidad</td>
-                <td class="text-end">0</td>
-                <td class="text-end">4</td>
-                <td>Estante A-3</td>
-                <td><span class="badge text-bg-success">Activo</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalProducto"><i class="bi bi-pencil"></i></button>
-                  <button class="btn btn-sm btn-outline-danger"><i class="bi bi-slash-circle"></i></button>
+            <tbody class="divide-y divide-border">
+              <tr class="hover:bg-accent/30">
+                <td class="px-4 py-3">REP-014</td>
+                <td class="px-4 py-3">Rodamiento 6205</td>
+                <td class="px-4 py-3">Repuestos</td>
+                <td class="px-4 py-3 text-right">0</td>
+                <td class="px-4 py-3 text-right">4</td>
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-chart-2/20 text-foreground text-xs px-2 py-0.5">Activo</span></td>
+                <td class="px-4 py-3 text-right">
+                  <button data-modal-target="modalProducto" class="text-muted-foreground hover:text-foreground"><i class="bi bi-pencil"></i></button>
                 </td>
               </tr>
-              <tr>
-                <td>REP-032</td>
-                <td>Banda transportadora B-48</td>
-                <td>Repuestos</td>
-                <td>unidad</td>
-                <td class="text-end">1</td>
-                <td class="text-end">2</td>
-                <td>Estante B-1</td>
-                <td><span class="badge text-bg-success">Activo</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalProducto"><i class="bi bi-pencil"></i></button>
-                  <button class="btn btn-sm btn-outline-danger"><i class="bi bi-slash-circle"></i></button>
+              <tr class="hover:bg-accent/30">
+                <td class="px-4 py-3">REP-032</td>
+                <td class="px-4 py-3">Banda transportadora B-48</td>
+                <td class="px-4 py-3">Repuestos</td>
+                <td class="px-4 py-3 text-right">1</td>
+                <td class="px-4 py-3 text-right">2</td>
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-chart-2/20 text-foreground text-xs px-2 py-0.5">Activo</span></td>
+                <td class="px-4 py-3 text-right">
+                  <button data-modal-target="modalProducto" class="text-muted-foreground hover:text-foreground"><i class="bi bi-pencil"></i></button>
                 </td>
               </tr>
-              <tr>
-                <td>INS-007</td>
-                <td>Grasa multipropósito</td>
-                <td>Insumos</td>
-                <td>kilogramo</td>
-                <td class="text-end">3</td>
-                <td class="text-end">5</td>
-                <td>Bodega general</td>
-                <td><span class="badge text-bg-success">Activo</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalProducto"><i class="bi bi-pencil"></i></button>
-                  <button class="btn btn-sm btn-outline-danger"><i class="bi bi-slash-circle"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td>HER-002</td>
-                <td>Juego de llaves allen</td>
-                <td>Herramientas</td>
-                <td>unidad</td>
-                <td class="text-end">12</td>
-                <td class="text-end">3</td>
-                <td>Estante C-2</td>
-                <td><span class="badge text-bg-success">Activo</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalProducto"><i class="bi bi-pencil"></i></button>
-                  <button class="btn btn-sm btn-outline-danger"><i class="bi bi-slash-circle"></i></button>
-                </td>
-              </tr>
-              <tr class="text-muted">
-                <td>MAT-021</td>
-                <td>Cable eléctrico #12</td>
-                <td>Materiales</td>
-                <td>metro</td>
-                <td class="text-end">0</td>
-                <td class="text-end">20</td>
-                <td>Bodega general</td>
-                <td><span class="badge text-bg-secondary">Inactivo</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary" disabled><i class="bi bi-pencil"></i></button>
-                  <button class="btn btn-sm btn-outline-success"><i class="bi bi-arrow-counterclockwise"></i></button>
+              <tr class="hover:bg-accent/30 text-muted-foreground">
+                <td class="px-4 py-3">MAT-021</td>
+                <td class="px-4 py-3">Cable eléctrico #12</td>
+                <td class="px-4 py-3">Materiales</td>
+                <td class="px-4 py-3 text-right">0</td>
+                <td class="px-4 py-3 text-right">20</td>
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-muted text-xs px-2 py-0.5">Inactivo</span></td>
+                <td class="px-4 py-3 text-right">
+                  <button class="text-muted-foreground"><i class="bi bi-arrow-counterclockwise"></i></button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="card-footer bg-white d-flex justify-content-between align-items-center small text-muted">
-          <span>Mostrando 5 de 184 productos</span>
-          <nav>
-            <ul class="pagination pagination-sm mb-0">
-              <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
-            </ul>
-          </nav>
-        </div>
+        <div class="px-4 py-3 border-t border-border text-xs text-muted-foreground">Mostrando 3 de 184 productos</div>
       </div>
 
     </main>
   </div>
 </div>
 
-<!-- ===== MODAL: Registrar / editar producto (FR-03) ===== -->
-<div class="modal fade" id="modalProducto" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i class="bi bi-box me-2"></i>Nuevo producto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<!-- Modal: registrar/editar producto -->
+<div id="modalProducto" class="modal-backdrop hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
+  <div class="bg-card border border-border rounded-xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+      <h3 class="font-medium">Nuevo producto</h3>
+      <button data-modal-close class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="p-5 space-y-4">
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Código interno</label>
+          <input type="text" placeholder="REP-045" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Categoría</label>
+          <select class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+            <option>Herramientas</option>
+            <option>Repuestos</option>
+            <option>Insumos</option>
+          </select>
+        </div>
       </div>
-      <div class="modal-body">
-        <form class="row g-3">
-          <div class="col-md-4">
-            <label class="form-label">Código interno</label>
-            <input type="text" class="form-control" placeholder="Ej. REP-045">
-          </div>
-          <div class="col-md-8">
-            <label class="form-label">Nombre</label>
-            <input type="text" class="form-control" placeholder="Nombre del producto">
-          </div>
-
-          <div class="col-md-4">
-            <label class="form-label">Marca</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Modelo</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">N° de parte</label>
-            <input type="text" class="form-control">
-          </div>
-
-          <div class="col-md-4">
-            <label class="form-label">Categoría</label>
-            <select class="form-select">
-              <option>Herramientas</option>
-              <option>Repuestos</option>
-              <option>Insumos</option>
-              <option>Equipos</option>
-              <option>Materiales</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Unidad de medida</label>
-            <select class="form-select">
-              <option>unidad</option>
-              <option>kilogramo</option>
-              <option>litro</option>
-              <option>metro</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Ubicación física</label>
-            <input type="text" class="form-control" placeholder="Ej. Estante A-3">
-          </div>
-
-          <div class="col-md-4">
-            <label class="form-label">Stock actual</label>
-            <input type="number" class="form-control" value="0">
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Stock mínimo</label>
-            <input type="number" class="form-control" value="0">
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Stock máximo</label>
-            <input type="number" class="form-control">
-          </div>
-
-          <div class="col-12 form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="requiereLote">
-            <label class="form-check-label" for="requiereLote">Este producto requiere trazabilidad por lote</label>
-          </div>
-        </form>
+      <div>
+        <label class="text-sm font-medium block mb-1.5">Nombre</label>
+        <input type="text" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar producto</button>
+      <div class="grid grid-cols-3 gap-3">
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Stock actual</label>
+          <input type="number" value="0" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Mínimo</label>
+          <input type="number" value="0" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Máximo</label>
+          <input type="number" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
       </div>
+      <div>
+        <label class="text-sm font-medium block mb-1.5">Ubicación física</label>
+        <input type="text" placeholder="Estante A-3" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+      </div>
+      <label class="flex items-center gap-2 text-sm">
+        <input type="checkbox" class="rounded border-border">
+        Este producto requiere trazabilidad por lote
+      </label>
+    </div>
+    <div class="flex justify-end gap-2 px-5 py-4 border-t border-border">
+      <button data-modal-close class="rounded-lg border border-border px-4 py-2 text-sm">Cancelar</button>
+      <button class="rounded-lg bg-primary text-primary-foreground px-4 py-2 text-sm hover:opacity-90">Guardar producto</button>
     </div>
   </div>
 </div>

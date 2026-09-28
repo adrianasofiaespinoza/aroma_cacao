@@ -5,228 +5,204 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Préstamos - Aroma Cacao</title>
 </head>
-<body>
-<div class="d-flex">
+<body class="bg-gradient-to-br from-background via-background to-secondary min-h-screen">
+<div class="flex w-full min-h-screen">
 
-  <!-- ===== MENÚ LATERAL ===== -->
-  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar">
-    <div class="offcanvas-header d-lg-none">
-      <span class="fw-semibold">Menú</span>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"></button>
-    </div>
-
-    <div class="offcanvas-body d-flex flex-column p-3">
-      <a href="dashboard.html" class="d-flex align-items-center gap-2 text-white text-decoration-none mb-3 px-2">
-        <i class="bi bi-box-seam fs-3"></i>
-        <div class="lh-1">
-          <div class="fw-semibold">Aroma Cacao</div>
-          <small class="opacity-75">Mantenimiento</small>
+  <aside class="hidden lg:flex flex-col w-64 shrink-0 border-r border-border bg-background/80 backdrop-blur-xl">
+    <div class="p-6 border-b border-border">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-primary to-chart-1 flex items-center justify-center">
+          <i class="bi bi-box-seam text-primary-foreground text-lg"></i>
         </div>
-      </a>
-
-      <nav class="nav flex-column">
-        <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
-
-        <div class="nav-section">Inventario</div>
-        <a class="nav-link" href="productos.html"><i class="bi bi-box me-2"></i>Productos</a>
-        <a class="nav-link" href="movimientos.html"><i class="bi bi-arrow-left-right me-2"></i>Movimientos</a>
-        <a class="nav-link active" href="prestamos.html"><i class="bi bi-tools me-2"></i>Préstamos</a>
-
-        <div class="nav-section">Catálogos</div>
-        <a class="nav-link" href="proveedores.html"><i class="bi bi-truck me-2"></i>Proveedores</a>
-        <a class="nav-link" href="maquinas.html"><i class="bi bi-gear-wide-connected me-2"></i>Máquinas</a>
-
-        <div class="nav-section">Administración</div>
-        <a class="nav-link" href="usuarios.html"><i class="bi bi-people me-2"></i>Usuarios</a>
-      </nav>
-
-      <a href="login.html" class="nav-link text-white-50 mt-auto"><i class="bi bi-box-arrow-left me-2"></i>Cerrar sesión</a>
+        <div>
+          <h2 class="font-medium leading-tight">Aroma Cacao</h2>
+          <p class="text-xs text-muted-foreground">Mantenimiento</p>
+        </div>
+      </div>
+    </div>
+    <nav class="p-4 space-y-1 flex-1">
+      <a href="dashboard.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-speedometer2 w-5 text-center"></i>Dashboard</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Inventario</p>
+      <a href="productos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-box w-5 text-center"></i>Productos</a>
+      <a href="movimientos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-arrow-left-right w-5 text-center"></i>Movimientos</a>
+      <a href="prestamos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm bg-primary/10 text-primary border-l-2 border-primary font-medium"><i class="bi bi-tools w-5 text-center"></i>Préstamos</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Catálogos</p>
+      <a href="proveedores.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-truck w-5 text-center"></i>Proveedores</a>
+      <a href="maquinas.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-gear-wide-connected w-5 text-center"></i>Máquinas</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Administración</p>
+      <a href="usuarios.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-people w-5 text-center"></i>Usuarios</a>
+    </nav>
+    <div class="p-4 border-t border-border">
+      <a href="login.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-box-arrow-left w-5 text-center"></i>Cerrar sesión</a>
     </div>
   </aside>
 
-  <!-- ===== CONTENIDO ===== -->
-  <div class="app-content flex-grow-1">
+  <div id="mobile-sidebar-overlay" class="hidden fixed inset-0 bg-black/40 z-40 lg:hidden"></div>
+  <aside id="mobile-sidebar" class="fixed inset-y-0 left-0 w-72 bg-background z-50 -translate-x-full transition-transform duration-200 lg:hidden flex flex-col">
+    <div class="p-6 border-b border-border flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-primary to-chart-1 flex items-center justify-center">
+          <i class="bi bi-box-seam text-primary-foreground text-lg"></i>
+        </div>
+        <div>
+          <h2 class="font-medium leading-tight">Aroma Cacao</h2>
+          <p class="text-xs text-muted-foreground">Mantenimiento</p>
+        </div>
+      </div>
+      <button id="mobile-sidebar-close" class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <nav class="p-4 space-y-1 flex-1 overflow-y-auto">
+      <a href="dashboard.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-speedometer2 w-5 text-center"></i>Dashboard</a>
+      <a href="productos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-box w-5 text-center"></i>Productos</a>
+      <a href="movimientos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-arrow-left-right w-5 text-center"></i>Movimientos</a>
+      <a href="prestamos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm bg-primary/10 text-primary font-medium"><i class="bi bi-tools w-5 text-center"></i>Préstamos</a>
+      <a href="proveedores.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-truck w-5 text-center"></i>Proveedores</a>
+      <a href="maquinas.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-gear-wide-connected w-5 text-center"></i>Máquinas</a>
+      <a href="usuarios.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-people w-5 text-center"></i>Usuarios</a>
+    </nav>
+  </aside>
 
-    <!-- Barra superior -->
-    <header class="navbar bg-white border-bottom px-3 px-lg-4 sticky-top">
-      <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-        <i class="bi bi-list"></i>
-      </button>
-
-      <div class="ms-auto d-flex align-items-center gap-3">
-        <a href="dashboard.html#alertas" class="position-relative text-body fs-5">
-          <i class="bi bi-bell"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">4</span>
-        </a>
-
-        <div class="dropdown">
-          <a class="d-flex align-items-center gap-2 text-decoration-none text-body dropdown-toggle" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-person-circle fs-4"></i>
-            <span class="d-none d-sm-inline">
-              Carlos Mena <span class="badge text-bg-primary ms-1">Coordinator</span>
-            </span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
-          </ul>
+  <div class="flex-1 flex flex-col min-w-0">
+    <header class="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur-xl p-4">
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <button id="mobile-menu-trigger" class="lg:hidden text-muted-foreground"><i class="bi bi-list text-xl"></i></button>
+          <h1 class="text-lg font-medium">Préstamos</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <button class="relative text-muted-foreground">
+            <i class="bi bi-bell text-lg"></i>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-destructive rounded-full"></span>
+          </button>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-primary/10 ring-2 ring-primary/20 flex items-center justify-center text-xs font-medium text-primary">CM</div>
+            <span class="hidden sm:inline text-sm">Carlos Mena</span>
+          </div>
         </div>
       </div>
     </header>
 
-    <main class="p-3 p-lg-4">
+    <main class="flex-1 p-4 lg:p-6">
 
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
-        <h1 class="h3 mb-0">Préstamos de herramientas</h1>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPrestamo">
-          <i class="bi bi-plus-lg me-1"></i>Nuevo préstamo
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <h2 class="text-xl font-medium">Préstamos de herramientas</h2>
+        <button data-modal-target="modalPrestamo" class="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground text-sm px-4 py-2 hover:opacity-90 transition">
+          <i class="bi bi-plus-lg"></i>Nuevo préstamo
         </button>
       </div>
 
-      <!-- Tabs por estado -->
-      <ul class="nav nav-pills mb-3 flex-wrap gap-2">
-        <li class="nav-item"><a class="nav-link active" href="#">Todos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Prestados <span class="badge text-bg-warning ms-1">3</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Devueltos</a></li>
-      </ul>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <button class="rounded-lg bg-primary text-primary-foreground text-sm px-3 py-1.5">Todos</button>
+        <button class="rounded-lg border border-border text-sm px-3 py-1.5 hover:bg-accent">Prestados <span class="ml-1 text-xs bg-chart-4/30 rounded-full px-1.5">3</span></button>
+        <button class="rounded-lg border border-border text-sm px-3 py-1.5 hover:bg-accent">Devueltos</button>
+      </div>
 
-      <!-- Tabla de préstamos -->
-      <div class="card border-0 shadow-sm">
-        <div class="table-responsive">
-          <table class="table table-hover align-middle mb-0">
-            <thead class="table-light">
+      <div class="bg-card border border-border rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-accent/40 text-muted-foreground">
               <tr>
-                <th>Herramienta</th>
-                <th class="text-end">Cantidad</th>
-                <th>Trabajador</th>
-                <th>Fecha préstamo</th>
-                <th>Fecha devolución</th>
-                <th>Estado</th>
-                <th class="text-end">Acciones</th>
+                <th class="text-left font-medium px-4 py-2">Herramienta</th>
+                <th class="text-right font-medium px-4 py-2">Cant.</th>
+                <th class="text-left font-medium px-4 py-2">Trabajador</th>
+                <th class="text-left font-medium px-4 py-2">Préstamo</th>
+                <th class="text-left font-medium px-4 py-2">Devolución</th>
+                <th class="text-left font-medium px-4 py-2">Estado</th>
+                <th class="text-right font-medium px-4 py-2">Acciones</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="table-warning">
-                <td>Taladro percutor</td>
-                <td class="text-end">1</td>
-                <td>Jhonny Farinango <span class="badge text-bg-light text-muted border">Externo</span></td>
-                <td>28/09/2026</td>
-                <td class="text-muted">—</td>
-                <td><span class="badge text-bg-warning">Prestado</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-success"><i class="bi bi-check-lg"></i> Registrar devolución</button>
+            <tbody class="divide-y divide-border">
+              <tr class="bg-chart-4/10 hover:bg-chart-4/20">
+                <td class="px-4 py-3">Taladro percutor</td>
+                <td class="px-4 py-3 text-right">1</td>
+                <td class="px-4 py-3">Jhonny Farinango <span class="text-xs text-muted-foreground border border-border rounded-full px-1.5 py-0.5 ml-1">Externo</span></td>
+                <td class="px-4 py-3">28/09/2026</td>
+                <td class="px-4 py-3 text-muted-foreground">—</td>
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-chart-4/30 text-xs px-2 py-0.5">Prestado</span></td>
+                <td class="px-4 py-3 text-right">
+                  <button class="inline-flex items-center gap-1 rounded-lg bg-chart-2/20 text-foreground text-xs px-2.5 py-1 hover:bg-chart-2/30">
+                    <i class="bi bi-check-lg"></i>Devolver
+                  </button>
                 </td>
               </tr>
-              <tr class="table-warning">
-                <td>Juego de llaves allen</td>
-                <td class="text-end">1</td>
-                <td>Luis Pozo</td>
-                <td>27/09/2026</td>
-                <td class="text-muted">—</td>
-                <td><span class="badge text-bg-warning">Prestado</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-success"><i class="bi bi-check-lg"></i> Registrar devolución</button>
+              <tr class="bg-chart-4/10 hover:bg-chart-4/20">
+                <td class="px-4 py-3">Juego de llaves allen</td>
+                <td class="px-4 py-3 text-right">1</td>
+                <td class="px-4 py-3">Luis Pozo</td>
+                <td class="px-4 py-3">27/09/2026</td>
+                <td class="px-4 py-3 text-muted-foreground">—</td>
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-chart-4/30 text-xs px-2 py-0.5">Prestado</span></td>
+                <td class="px-4 py-3 text-right">
+                  <button class="inline-flex items-center gap-1 rounded-lg bg-chart-2/20 text-foreground text-xs px-2.5 py-1 hover:bg-chart-2/30">
+                    <i class="bi bi-check-lg"></i>Devolver
+                  </button>
                 </td>
               </tr>
-              <tr class="table-warning">
-                <td>Amoladora angular</td>
-                <td class="text-end">1</td>
-                <td>Marco Vega</td>
-                <td>26/09/2026</td>
-                <td class="text-muted">—</td>
-                <td><span class="badge text-bg-warning">Prestado</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-success"><i class="bi bi-check-lg"></i> Registrar devolución</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Taladro percutor</td>
-                <td class="text-end">1</td>
-                <td>Ana Toapanta</td>
-                <td>20/09/2026</td>
-                <td>22/09/2026</td>
-                <td><span class="badge text-bg-success">Devuelto</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary" disabled><i class="bi bi-eye"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td>Multímetro digital</td>
-                <td class="text-end">1</td>
-                <td>Luis Pozo</td>
-                <td>15/09/2026</td>
-                <td>16/09/2026</td>
-                <td><span class="badge text-bg-success">Devuelto</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary" disabled><i class="bi bi-eye"></i></button>
-                </td>
+              <tr class="hover:bg-accent/30 text-muted-foreground">
+                <td class="px-4 py-3">Taladro percutor</td>
+                <td class="px-4 py-3 text-right">1</td>
+                <td class="px-4 py-3">Ana Toapanta</td>
+                <td class="px-4 py-3">20/09/2026</td>
+                <td class="px-4 py-3">22/09/2026</td>
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-chart-2/20 text-xs px-2 py-0.5">Devuelto</span></td>
+                <td class="px-4 py-3 text-right"><button disabled class="text-muted-foreground/50"><i class="bi bi-eye"></i></button></td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="card-footer bg-white small text-muted">
-          Mostrando 5 de 22 préstamos registrados
-        </div>
+        <div class="px-4 py-3 border-t border-border text-xs text-muted-foreground">Mostrando 3 de 22 préstamos registrados</div>
       </div>
 
     </main>
   </div>
 </div>
 
-<!-- ===== MODAL: Registrar préstamo (FR-18) ===== -->
-<div class="modal fade" id="modalPrestamo" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i class="bi bi-tools me-2"></i>Nuevo préstamo</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<!-- Modal: registrar préstamo -->
+<div id="modalPrestamo" class="modal-backdrop hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
+  <div class="bg-card border border-border rounded-xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+      <h3 class="font-medium">Nuevo préstamo</h3>
+      <button data-modal-close class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="p-5 space-y-4">
+      <div class="grid grid-cols-3 gap-3">
+        <div class="col-span-2">
+          <label class="text-sm font-medium block mb-1.5">Herramienta</label>
+          <select class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+            <option>HER-002 · Juego de llaves allen (Stock: 12)</option>
+            <option>HER-005 · Taladro percutor (Stock: 3)</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Cantidad</label>
+          <input type="number" value="1" min="1" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
       </div>
-      <div class="modal-body">
-        <form class="row g-3">
-
-          <div class="col-md-8">
-            <label class="form-label">Herramienta</label>
-            <select class="form-select">
-              <option>HER-002 · Juego de llaves allen (Stock: 12)</option>
-              <option>HER-005 · Taladro percutor (Stock: 3)</option>
-              <option>HER-009 · Amoladora angular (Stock: 2)</option>
-              <option>HER-011 · Multímetro digital (Stock: 4)</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Cantidad</label>
-            <input type="number" class="form-control" value="1" min="1">
-          </div>
-
-          <div class="col-12">
-            <label class="form-label">Trabajador</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-person"></i></span>
-              <input type="text" class="form-control" list="listaTrabajadores" placeholder="Escribe el nombre o selecciona uno existente">
-              <datalist id="listaTrabajadores">
-                <option value="Luis Pozo">
-                <option value="Ana Toapanta">
-                <option value="Marco Vega">
-                <option value="Jhonny Farinango">
-              </datalist>
-            </div>
-            <div class="form-text">El trabajador no necesita tener una cuenta en el sistema (FR-18).</div>
-          </div>
-
-          <div class="col-md-6">
-            <label class="form-label">Fecha de préstamo</label>
-            <input type="date" class="form-control">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Fecha estimada de devolución</label>
-            <input type="date" class="form-control">
-          </div>
-
-        </form>
+      <div>
+        <label class="text-sm font-medium block mb-1.5">Trabajador</label>
+        <input type="text" list="listaTrabajadores" placeholder="Escribe el nombre o selecciona uno existente" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        <datalist id="listaTrabajadores">
+          <option value="Luis Pozo">
+          <option value="Ana Toapanta">
+          <option value="Marco Vega">
+          <option value="Jhonny Farinango">
+        </datalist>
+        <p class="text-xs text-muted-foreground mt-1.5">El trabajador no necesita tener una cuenta en el sistema (FR-18).</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Registrar préstamo</button>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Fecha de préstamo</label>
+          <input type="date" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Devolución estimada</label>
+          <input type="date" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
       </div>
+    </div>
+    <div class="flex justify-end gap-2 px-5 py-4 border-t border-border">
+      <button data-modal-close class="rounded-lg border border-border px-4 py-2 text-sm">Cancelar</button>
+      <button class="rounded-lg bg-primary text-primary-foreground px-4 py-2 text-sm hover:opacity-90">Registrar préstamo</button>
     </div>
   </div>
 </div>

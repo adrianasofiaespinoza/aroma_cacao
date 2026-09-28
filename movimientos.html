@@ -5,297 +5,252 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Movimientos - Aroma Cacao</title>
 </head>
-<body>
-<div class="d-flex">
+<body class="bg-gradient-to-br from-background via-background to-secondary min-h-screen">
+<div class="flex w-full min-h-screen">
 
-  <!-- ===== MENÚ LATERAL ===== -->
-  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar">
-    <div class="offcanvas-header d-lg-none">
-      <span class="fw-semibold">Menú</span>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"></button>
-    </div>
-
-    <div class="offcanvas-body d-flex flex-column p-3">
-      <a href="dashboard.html" class="d-flex align-items-center gap-2 text-white text-decoration-none mb-3 px-2">
-        <i class="bi bi-box-seam fs-3"></i>
-        <div class="lh-1">
-          <div class="fw-semibold">Aroma Cacao</div>
-          <small class="opacity-75">Mantenimiento</small>
+  <aside class="hidden lg:flex flex-col w-64 shrink-0 border-r border-border bg-background/80 backdrop-blur-xl">
+    <div class="p-6 border-b border-border">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-primary to-chart-1 flex items-center justify-center">
+          <i class="bi bi-box-seam text-primary-foreground text-lg"></i>
         </div>
-      </a>
-
-      <nav class="nav flex-column">
-        <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
-
-        <div class="nav-section">Inventario</div>
-        <a class="nav-link" href="productos.html"><i class="bi bi-box me-2"></i>Productos</a>
-        <a class="nav-link active" href="movimientos.html"><i class="bi bi-arrow-left-right me-2"></i>Movimientos</a>
-        <a class="nav-link" href="prestamos.html"><i class="bi bi-tools me-2"></i>Préstamos</a>
-
-        <div class="nav-section">Catálogos</div>
-        <a class="nav-link" href="proveedores.html"><i class="bi bi-truck me-2"></i>Proveedores</a>
-        <a class="nav-link" href="maquinas.html"><i class="bi bi-gear-wide-connected me-2"></i>Máquinas</a>
-
-        <div class="nav-section">Administración</div>
-        <a class="nav-link" href="usuarios.html"><i class="bi bi-people me-2"></i>Usuarios</a>
-      </nav>
-
-      <a href="login.html" class="nav-link text-white-50 mt-auto"><i class="bi bi-box-arrow-left me-2"></i>Cerrar sesión</a>
+        <div>
+          <h2 class="font-medium leading-tight">Aroma Cacao</h2>
+          <p class="text-xs text-muted-foreground">Mantenimiento</p>
+        </div>
+      </div>
+    </div>
+    <nav class="p-4 space-y-1 flex-1">
+      <a href="dashboard.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-speedometer2 w-5 text-center"></i>Dashboard</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Inventario</p>
+      <a href="productos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-box w-5 text-center"></i>Productos</a>
+      <a href="movimientos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm bg-primary/10 text-primary border-l-2 border-primary font-medium"><i class="bi bi-arrow-left-right w-5 text-center"></i>Movimientos</a>
+      <a href="prestamos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-tools w-5 text-center"></i>Préstamos</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Catálogos</p>
+      <a href="proveedores.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-truck w-5 text-center"></i>Proveedores</a>
+      <a href="maquinas.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-gear-wide-connected w-5 text-center"></i>Máquinas</a>
+      <p class="text-xs uppercase tracking-wide text-muted-foreground px-3 pt-4 pb-1">Administración</p>
+      <a href="usuarios.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-people w-5 text-center"></i>Usuarios</a>
+    </nav>
+    <div class="p-4 border-t border-border">
+      <a href="login.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent transition"><i class="bi bi-box-arrow-left w-5 text-center"></i>Cerrar sesión</a>
     </div>
   </aside>
 
-  <!-- ===== CONTENIDO ===== -->
-  <div class="app-content flex-grow-1">
+  <div id="mobile-sidebar-overlay" class="hidden fixed inset-0 bg-black/40 z-40 lg:hidden"></div>
+  <aside id="mobile-sidebar" class="fixed inset-y-0 left-0 w-72 bg-background z-50 -translate-x-full transition-transform duration-200 lg:hidden flex flex-col">
+    <div class="p-6 border-b border-border flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-primary to-chart-1 flex items-center justify-center">
+          <i class="bi bi-box-seam text-primary-foreground text-lg"></i>
+        </div>
+        <div>
+          <h2 class="font-medium leading-tight">Aroma Cacao</h2>
+          <p class="text-xs text-muted-foreground">Mantenimiento</p>
+        </div>
+      </div>
+      <button id="mobile-sidebar-close" class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <nav class="p-4 space-y-1 flex-1 overflow-y-auto">
+      <a href="dashboard.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-speedometer2 w-5 text-center"></i>Dashboard</a>
+      <a href="productos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-box w-5 text-center"></i>Productos</a>
+      <a href="movimientos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm bg-primary/10 text-primary font-medium"><i class="bi bi-arrow-left-right w-5 text-center"></i>Movimientos</a>
+      <a href="prestamos.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-tools w-5 text-center"></i>Préstamos</a>
+      <a href="proveedores.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-truck w-5 text-center"></i>Proveedores</a>
+      <a href="maquinas.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-gear-wide-connected w-5 text-center"></i>Máquinas</a>
+      <a href="usuarios.html" class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent"><i class="bi bi-people w-5 text-center"></i>Usuarios</a>
+    </nav>
+  </aside>
 
-    <!-- Barra superior -->
-    <header class="navbar bg-white border-bottom px-3 px-lg-4 sticky-top">
-      <button class="btn btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-        <i class="bi bi-list"></i>
-      </button>
-
-      <div class="ms-auto d-flex align-items-center gap-3">
-        <a href="dashboard.html#alertas" class="position-relative text-body fs-5">
-          <i class="bi bi-bell"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">4</span>
-        </a>
-
-        <div class="dropdown">
-          <a class="d-flex align-items-center gap-2 text-decoration-none text-body dropdown-toggle" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-person-circle fs-4"></i>
-            <span class="d-none d-sm-inline">
-              Carlos Mena <span class="badge text-bg-primary ms-1">Coordinator</span>
-            </span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
-          </ul>
+  <div class="flex-1 flex flex-col min-w-0">
+    <header class="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur-xl p-4">
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <button id="mobile-menu-trigger" class="lg:hidden text-muted-foreground"><i class="bi bi-list text-xl"></i></button>
+          <h1 class="text-lg font-medium">Movimientos</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <button class="relative text-muted-foreground">
+            <i class="bi bi-bell text-lg"></i>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-destructive rounded-full"></span>
+          </button>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-primary/10 ring-2 ring-primary/20 flex items-center justify-center text-xs font-medium text-primary">CM</div>
+            <span class="hidden sm:inline text-sm">Carlos Mena</span>
+          </div>
         </div>
       </div>
     </header>
 
-    <main class="p-3 p-lg-4">
+    <main class="flex-1 p-4 lg:p-6">
 
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
-        <h1 class="h3 mb-0">Movimientos</h1>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMovimiento">
-          <i class="bi bi-plus-lg me-1"></i>Nuevo movimiento
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <h2 class="text-xl font-medium">Movimientos de inventario</h2>
+        <button data-modal-target="modalMovimiento" class="inline-flex items-center gap-2 rounded-lg bg-primary text-primary-foreground text-sm px-4 py-2 hover:opacity-90 transition">
+          <i class="bi bi-plus-lg"></i>Nuevo movimiento
         </button>
       </div>
 
-      <!-- Tabs por tipo -->
-      <ul class="nav nav-pills mb-3 flex-wrap gap-2">
-        <li class="nav-item"><a class="nav-link active" href="#">Todos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Pendientes <span class="badge text-bg-warning ms-1">3</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Entradas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Salidas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Ajustes</a></li>
-      </ul>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <button class="rounded-lg bg-primary text-primary-foreground text-sm px-3 py-1.5">Todos</button>
+        <button class="rounded-lg border border-border text-sm px-3 py-1.5 hover:bg-accent">Pendientes <span class="ml-1 text-xs bg-chart-4/30 rounded-full px-1.5">3</span></button>
+        <button class="rounded-lg border border-border text-sm px-3 py-1.5 hover:bg-accent">Entradas</button>
+        <button class="rounded-lg border border-border text-sm px-3 py-1.5 hover:bg-accent">Salidas</button>
+        <button class="rounded-lg border border-border text-sm px-3 py-1.5 hover:bg-accent">Ajustes</button>
+      </div>
 
-      <!-- Tabla de movimientos -->
-      <div class="card border-0 shadow-sm">
-        <div class="table-responsive">
-          <table class="table table-hover align-middle mb-0">
-            <thead class="table-light">
+      <div class="bg-card border border-border rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-accent/40 text-muted-foreground">
               <tr>
-                <th>Tipo</th>
-                <th>Producto</th>
-                <th class="text-end">Cantidad</th>
-                <th>Fecha</th>
-                <th>Solicitante</th>
-                <th>Autorizado por</th>
-                <th>Estado</th>
-                <th class="text-end">Acciones</th>
+                <th class="text-left font-medium px-4 py-2">Tipo</th>
+                <th class="text-left font-medium px-4 py-2">Producto</th>
+                <th class="text-right font-medium px-4 py-2">Cantidad</th>
+                <th class="text-left font-medium px-4 py-2">Fecha</th>
+                <th class="text-left font-medium px-4 py-2">Solicitante</th>
+                <th class="text-left font-medium px-4 py-2">Estado</th>
+                <th class="text-right font-medium px-4 py-2">Acciones</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="table-warning">
-                <td><span class="badge text-bg-secondary">EXIT</span></td>
-                <td>Rodamiento 6205</td>
-                <td class="text-end">6</td>
-                <td>28/09/2026</td>
-                <td>Luis Pozo</td>
-                <td class="text-muted">—</td>
-                <td><span class="badge text-bg-warning">Pendiente</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#modalAutorizar">
-                    <i class="bi bi-check-lg"></i> Autorizar
+            <tbody class="divide-y divide-border">
+              <tr class="bg-chart-4/10 hover:bg-chart-4/20">
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-muted text-xs px-2 py-0.5">EXIT</span></td>
+                <td class="px-4 py-3">Rodamiento 6205</td>
+                <td class="px-4 py-3 text-right">6</td>
+                <td class="px-4 py-3">28/09/2026</td>
+                <td class="px-4 py-3">Luis Pozo</td>
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-chart-4/30 text-xs px-2 py-0.5">Pendiente</span></td>
+                <td class="px-4 py-3 text-right">
+                  <button data-modal-target="modalAutorizar" class="inline-flex items-center gap-1 rounded-lg bg-chart-2/20 text-foreground text-xs px-2.5 py-1 hover:bg-chart-2/30">
+                    <i class="bi bi-check-lg"></i>Autorizar
                   </button>
                 </td>
               </tr>
-              <tr class="table-warning">
-                <td><span class="badge text-bg-success">ENTRY</span></td>
-                <td>Grasa multipropósito</td>
-                <td class="text-end">10</td>
-                <td>28/09/2026</td>
-                <td>Ana Toapanta</td>
-                <td class="text-muted">—</td>
-                <td><span class="badge text-bg-warning">Pendiente</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#modalAutorizar">
-                    <i class="bi bi-check-lg"></i> Autorizar
+              <tr class="bg-chart-4/10 hover:bg-chart-4/20">
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-muted text-xs px-2 py-0.5">ENTRY</span></td>
+                <td class="px-4 py-3">Grasa multipropósito</td>
+                <td class="px-4 py-3 text-right">10</td>
+                <td class="px-4 py-3">28/09/2026</td>
+                <td class="px-4 py-3">Ana Toapanta</td>
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-chart-4/30 text-xs px-2 py-0.5">Pendiente</span></td>
+                <td class="px-4 py-3 text-right">
+                  <button data-modal-target="modalAutorizar" class="inline-flex items-center gap-1 rounded-lg bg-chart-2/20 text-foreground text-xs px-2.5 py-1 hover:bg-chart-2/30">
+                    <i class="bi bi-check-lg"></i>Autorizar
                   </button>
                 </td>
               </tr>
-              <tr>
-                <td><span class="badge text-bg-secondary">EXIT</span></td>
-                <td>Banda transportadora B-48</td>
-                <td class="text-end">1</td>
-                <td>27/09/2026</td>
-                <td>Luis Pozo</td>
-                <td>Carlos Mena</td>
-                <td><span class="badge text-bg-success">Autorizado</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-eye"></i></button>
-                </td>
+              <tr class="hover:bg-accent/30">
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-muted text-xs px-2 py-0.5">EXIT</span></td>
+                <td class="px-4 py-3">Banda transportadora B-48</td>
+                <td class="px-4 py-3 text-right">1</td>
+                <td class="px-4 py-3">27/09/2026</td>
+                <td class="px-4 py-3">Luis Pozo</td>
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-chart-2/20 text-xs px-2 py-0.5">Autorizado</span></td>
+                <td class="px-4 py-3 text-right"><button class="text-muted-foreground"><i class="bi bi-eye"></i></button></td>
               </tr>
-              <tr>
-                <td><span class="badge text-bg-info">ADJUSTMENT</span></td>
-                <td>Cable eléctrico #12</td>
-                <td class="text-end">-2</td>
-                <td>26/09/2026</td>
-                <td>Carlos Mena</td>
-                <td>Carlos Mena</td>
-                <td><span class="badge text-bg-success">Autorizado</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-eye"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td><span class="badge text-bg-success">ENTRY</span></td>
-                <td>Juego de llaves allen</td>
-                <td class="text-end">15</td>
-                <td>25/09/2026</td>
-                <td>Ana Toapanta</td>
-                <td>Carlos Mena</td>
-                <td><span class="badge text-bg-success">Autorizado</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-eye"></i></button>
-                </td>
+              <tr class="hover:bg-accent/30">
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-muted text-xs px-2 py-0.5">ADJUSTMENT</span></td>
+                <td class="px-4 py-3">Cable eléctrico #12</td>
+                <td class="px-4 py-3 text-right">-2</td>
+                <td class="px-4 py-3">26/09/2026</td>
+                <td class="px-4 py-3">Carlos Mena</td>
+                <td class="px-4 py-3"><span class="inline-flex rounded-full bg-chart-2/20 text-xs px-2 py-0.5">Autorizado</span></td>
+                <td class="px-4 py-3 text-right"><button class="text-muted-foreground"><i class="bi bi-eye"></i></button></td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="card-footer bg-white small text-muted">
-          Mostrando 5 de 342 movimientos registrados en el último año
-        </div>
+        <div class="px-4 py-3 border-t border-border text-xs text-muted-foreground">Mostrando 4 de 342 movimientos registrados en el último año</div>
       </div>
 
     </main>
   </div>
 </div>
 
-<!-- ===== MODAL: Registrar movimiento (FR-13) ===== -->
-<div class="modal fade" id="modalMovimiento" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i class="bi bi-arrow-left-right me-2"></i>Nuevo movimiento</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<!-- Modal: nuevo movimiento -->
+<div id="modalMovimiento" class="modal-backdrop hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
+  <div class="bg-card border border-border rounded-xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+      <h3 class="font-medium">Nuevo movimiento</h3>
+      <button data-modal-close class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="p-5 space-y-4">
+      <div class="grid grid-cols-3 gap-3">
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Tipo</label>
+          <select class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+            <option value="ENTRY">Entrada</option>
+            <option value="EXIT">Salida</option>
+            <option value="ADJUSTMENT">Ajuste</option>
+          </select>
+        </div>
+        <div class="col-span-2">
+          <label class="text-sm font-medium block mb-1.5">Producto</label>
+          <select class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+            <option>REP-014 · Rodamiento 6205 (Stock: 0)</option>
+            <option>INS-007 · Grasa multipropósito (Stock: 3)</option>
+          </select>
+        </div>
       </div>
-      <div class="modal-body">
-        <form class="row g-3">
-
-          <div class="col-md-4">
-            <label class="form-label">Tipo de movimiento</label>
-            <select class="form-select" id="tipoMovimiento">
-              <option value="ENTRY">Entrada</option>
-              <option value="EXIT">Salida</option>
-              <option value="ADJUSTMENT">Ajuste</option>
-            </select>
-          </div>
-          <div class="col-md-8">
-            <label class="form-label">Producto</label>
-            <select class="form-select">
-              <option>REP-014 · Rodamiento 6205 (Stock: 0)</option>
-              <option>REP-032 · Banda transportadora B-48 (Stock: 1)</option>
-              <option>INS-007 · Grasa multipropósito (Stock: 3)</option>
-              <option>HER-002 · Juego de llaves allen (Stock: 12)</option>
-            </select>
-          </div>
-
-          <div class="col-md-4">
-            <label class="form-label">Cantidad</label>
-            <input type="number" class="form-control" min="0" step="0.01">
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Fecha</label>
-            <input type="date" class="form-control">
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Lote (si aplica)</label>
-            <select class="form-select">
-              <option>Sin lote</option>
-              <option>LOTE-2026-014 (vence 12/2026)</option>
-              <option>LOTE-2026-021 (vence 03/2027)</option>
-            </select>
-          </div>
-
-          <div class="col-md-6">
-            <label class="form-label">Máquina destino (solo repuestos)</label>
-            <select class="form-select">
-              <option>No aplica</option>
-              <option>Molino M-1</option>
-              <option>Tostadora T-2</option>
-              <option>Envasadora E-3</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">N° de orden de trabajo</label>
-            <input type="text" class="form-control" placeholder="Opcional">
-          </div>
-
-          <div class="col-12">
-            <label class="form-label">Motivo (obligatorio para salidas)</label>
-            <textarea class="form-control" rows="2" placeholder="Ej. Reemplazo por falla en molino M-1"></textarea>
-          </div>
-
-          <div class="col-12">
-            <div class="alert alert-warning d-flex align-items-start gap-2 mb-0">
-              <i class="bi bi-info-circle-fill mt-1"></i>
-              <div>Como usuario <strong>Operator</strong>, este movimiento quedará <strong>pendiente</strong> hasta que un Coordinador lo autorice.</div>
-            </div>
-          </div>
-
-        </form>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Cantidad</label>
+          <input type="number" min="0" step="0.01" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
+        <div>
+          <label class="text-sm font-medium block mb-1.5">Fecha</label>
+          <input type="date" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Registrar movimiento</button>
+      <div>
+        <label class="text-sm font-medium block mb-1.5">Máquina destino (solo repuestos)</label>
+        <select class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm">
+          <option>No aplica</option>
+          <option>Molino M-1</option>
+          <option>Tostadora T-2</option>
+        </select>
       </div>
+      <div>
+        <label class="text-sm font-medium block mb-1.5">Motivo (obligatorio para salidas)</label>
+        <textarea rows="2" class="w-full rounded-lg bg-input-background border border-border px-3 py-2 text-sm"></textarea>
+      </div>
+      <div class="flex items-start gap-2 rounded-lg bg-chart-4/10 border border-chart-4/30 p-3 text-sm">
+        <i class="bi bi-info-circle-fill mt-0.5"></i>
+        <span>Como usuario <strong>Operator</strong>, este movimiento quedará <strong>pendiente</strong> hasta que un Coordinador lo autorice.</span>
+      </div>
+    </div>
+    <div class="flex justify-end gap-2 px-5 py-4 border-t border-border">
+      <button data-modal-close class="rounded-lg border border-border px-4 py-2 text-sm">Cancelar</button>
+      <button class="rounded-lg bg-primary text-primary-foreground px-4 py-2 text-sm hover:opacity-90">Registrar movimiento</button>
     </div>
   </div>
 </div>
 
-<!-- ===== MODAL: Autorizar movimiento (FR-14, FR-15) ===== -->
-<div class="modal fade" id="modalAutorizar" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><i class="bi bi-check-circle me-2"></i>Autorizar movimiento</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<!-- Modal: autorizar movimiento -->
+<div id="modalAutorizar" class="modal-backdrop hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
+  <div class="bg-card border border-border rounded-xl w-full max-w-md">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+      <h3 class="font-medium">Autorizar movimiento</h3>
+      <button data-modal-close class="text-muted-foreground"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="p-5 space-y-4 text-sm">
+      <dl class="grid grid-cols-2 gap-y-2">
+        <dt class="text-muted-foreground">Tipo</dt><dd><span class="inline-flex rounded-full bg-muted text-xs px-2 py-0.5">EXIT</span></dd>
+        <dt class="text-muted-foreground">Producto</dt><dd>Rodamiento 6205</dd>
+        <dt class="text-muted-foreground">Cantidad solicitada</dt><dd>6</dd>
+        <dt class="text-muted-foreground">Stock disponible</dt><dd class="text-destructive font-medium">0</dd>
+        <dt class="text-muted-foreground">Solicitante</dt><dd>Luis Pozo</dd>
+      </dl>
+      <div class="flex items-start gap-2 rounded-lg bg-destructive/10 border border-destructive/30 p-3">
+        <i class="bi bi-exclamation-triangle-fill text-destructive mt-0.5"></i>
+        <span>La cantidad solicitada <strong>excede el stock disponible</strong>. Solo autoriza si es un caso de emergencia (FR-15).</span>
       </div>
-      <div class="modal-body">
-        <dl class="row mb-3">
-          <dt class="col-5">Tipo</dt><dd class="col-7"><span class="badge text-bg-secondary">EXIT</span></dd>
-          <dt class="col-5">Producto</dt><dd class="col-7">Rodamiento 6205</dd>
-          <dt class="col-5">Cantidad solicitada</dt><dd class="col-7">6</dd>
-          <dt class="col-5">Stock disponible</dt><dd class="col-7 text-danger fw-semibold">0</dd>
-          <dt class="col-5">Solicitante</dt><dd class="col-7">Luis Pozo</dd>
-        </dl>
-
-        <div class="alert alert-danger d-flex align-items-start gap-2">
-          <i class="bi bi-exclamation-triangle-fill mt-1"></i>
-          <div>La cantidad solicitada <strong>excede el stock disponible</strong>. Solo autoriza si es un caso de emergencia (FR-15).</div>
-        </div>
-
-        <label class="form-label">Comentario de autorización (opcional)</label>
-        <textarea class="form-control" rows="2"></textarea>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-outline-danger">Rechazar</button>
-        <button type="button" class="btn btn-success">Autorizar de todas formas</button>
-      </div>
+    </div>
+    <div class="flex justify-end gap-2 px-5 py-4 border-t border-border">
+      <button data-modal-close class="rounded-lg border border-border px-4 py-2 text-sm">Cancelar</button>
+      <button class="rounded-lg border border-destructive text-destructive px-4 py-2 text-sm hover:bg-destructive/10">Rechazar</button>
+      <button class="rounded-lg bg-primary text-primary-foreground px-4 py-2 text-sm hover:opacity-90">Autorizar de todas formas</button>
     </div>
   </div>
 </div>
